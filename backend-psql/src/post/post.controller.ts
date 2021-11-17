@@ -1,14 +1,19 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Inject, Param, Post, Put } from '@nestjs/common';
+import { ClientProxy } from '@nestjs/microservices';
 import { PostService } from './post.service';
 
 @Controller('posts')
 export class PostController {
 
-    constructor(private postService: PostService) {
+    constructor(
+        private postService: PostService,
+        @Inject('POST_SERVICE') private readonly client: ClientProxy
+    ) {
     }
 
     @Get()  
     async all() {
+        this.client.emit('hey', 'Hey from RMQ');
         return this.postService.all()
     }
 
