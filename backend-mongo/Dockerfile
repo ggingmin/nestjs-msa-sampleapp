@@ -13,5 +13,7 @@ WORKDIR /app
 COPY --from=BUILDER /app ./
 
 EXPOSE 8001
+EXPOSE 5672
 
-CMD ["npm", "run", "start:dev"]
+CMD ["npm", "run", "start:listener"]
+

@@ -19,7 +19,7 @@ export class Post {
     content: string
 
     @Prop()
-    likes: string;
+    likes: number;
 }
 
 export const PostSchema = SchemaFactory.createForClass(Post);
