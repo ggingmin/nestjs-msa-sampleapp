@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> The Asynchronous API has been implemented using Nest.js, Postgresql, MongoDB, and RabbitMQ.
+> The Asynchronous API has been implemented using Nest.js, Postgresql, MongoDB, RabbitMQ, and Docker Compose.
 
 ## Usage
 
